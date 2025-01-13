@@ -21,7 +21,7 @@ const ProductList: React.FC = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 1000,
+            delay: 2000,
           }),
         ]}
         className="w-full"
@@ -30,24 +30,27 @@ const ProductList: React.FC = () => {
           {products.map((product, index) => (
             <CarouselItem
               key={index}
-              className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/5"
+              className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
             >
-              <Card className="bg-white shadow-xl transform transition-transform hover:scale-105">
-                <CardContent className="p-0">
-                  <img
-                    src={product.imageUrl}
-                    alt={product.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
+              <Card className="bg-white shadow-xl transform transition-transform hover:scale-105 h-full">
+                <CardContent className="p-4 flex flex-col justify-between h-full">
+                  {/* Wrapper untuk gambar */}
+                  <div className="overflow-hidden rounded-lg mb-4 relative group h-48">
+                    <img
+                      src={product.imageUrl}
+                      alt={product.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-lg"
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1">
                     <h3 className="text-xl font-semibold text-green-800 mb-2">
                       {product.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-4 flex-1">
                       {product.description}
                     </p>
                     <Link href={`/product/${product.slug}`}>
-                      <button className="px-4 py-2 border border-green-800 text-green-800 rounded-md hover:bg-green-800 hover:text-white transition-colors">
+                      <button className="px-4 py-2 mt-auto border border-green-800 text-green-800 rounded-md hover:bg-green-800 hover:text-white transition-colors">
                         Lihat Detail
                       </button>
                     </Link>
@@ -57,8 +60,12 @@ const ProductList: React.FC = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-white text-green-800 hover:bg-green-100 -left-12" />
-        <CarouselNext className="bg-white text-green-800 hover:bg-green-100 -right-12" />
+
+        {/* Tombol Previous */}
+        <CarouselPrevious className="hidden md:flex items-center justify-center bg-white text-green-800 hover:bg-green-100 -left-12 rounded-full w-10 h-10 shadow-md" />
+
+        {/* Tombol Next */}
+        <CarouselNext className="hidden md:flex items-center justify-center bg-white text-green-800 hover:bg-green-100 -right-12 rounded-full w-10 h-10 shadow-md" />
       </Carousel>
     </div>
   );

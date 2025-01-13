@@ -3,6 +3,7 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation"; 
 
 interface NavbarProps {
   isWhite?: boolean;
@@ -10,8 +11,17 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isWhite = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter(); 
 
   const textColor = isWhite ? "text-white" : "text-green-800";
+
+ 
+  const handleScroll = (id: string) => {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="absolute top-0 left-0 w-full z-50">
@@ -33,24 +43,24 @@ const Navbar: React.FC<NavbarProps> = ({ isWhite = false }) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex justify-end flex-1 font-medium space-x-8">
-            <a
-              href="#home"
+            <button
+              onClick={() => router.push("/")} // Navigate to landing page
               className={`${textColor} hover:underline hover:decoration-green-800 hover:underline-offset-4 transition`}
             >
               Home
-            </a>
-            <a
-              href="#catalog"
+            </button>
+            <button
+              onClick={() => handleScroll("catalog")}
               className={`${textColor} hover:underline hover:decoration-green-800 hover:underline-offset-4 transition`}
             >
               Catalog
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => handleScroll("contact")}
               className={`${textColor} hover:underline hover:decoration-green-800 hover:underline-offset-4 transition`}
             >
               Contact
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Icon */}
@@ -81,24 +91,24 @@ const Navbar: React.FC<NavbarProps> = ({ isWhite = false }) => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="flex flex-col space-y-4 mt-4 md:hidden">
-            <a
-              href="#home"
+            <button
+              onClick={() => router.push("/")} 
               className={`${textColor} hover:underline hover:decoration-green-800 hover:underline-offset-4 transition`}
             >
               Home
-            </a>
-            <a
-              href="#catalog"
+            </button>
+            <button
+              onClick={() => handleScroll("catalog")}
               className={`${textColor} hover:underline hover:decoration-green-800 hover:underline-offset-4 transition`}
             >
               Catalog
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => handleScroll("contact")}
               className={`${textColor} hover:underline hover:decoration-green-800 hover:underline-offset-4 transition`}
             >
               Contact
-            </a>
+            </button>
           </div>
         )}
       </div>

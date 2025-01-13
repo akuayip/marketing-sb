@@ -3,15 +3,15 @@ import { products } from "@/assets/data";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import ProductImage from "@/components/ProductImage";
 interface Props {
   params: Promise<{
     slug: string;
-  }>; // Pastikan params adalah Promise
+  }>;
 }
 
 const ProductDetail = async ({ params }: Props) => {
-  const { slug } = await params; // Tunggu params yang diresolve
+  const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
 
   if (!product) {
@@ -36,14 +36,12 @@ const ProductDetail = async ({ params }: Props) => {
             {product.title}
           </h1>
 
-          {/* Gambar Produk */}
-          <div className="mb-8 flex justify-center">
-            <img
-              src={product.imageUrl}
-              alt={product.title}
-              className="w-full max-h-[400px] object-cover rounded-lg shadow-md"
-            />
-          </div>
+          {/* Komponen ProductImage */}
+          <ProductImage
+            images={product.images || []}
+            fallbackImage={product.imageUrl}
+            title={product.title}
+          />
 
           {/* Deskripsi */}
           <p className="text-gray-700 leading-relaxed mb-8">
@@ -58,9 +56,14 @@ const ProductDetail = async ({ params }: Props) => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
                 <i className="fab fa-whatsapp text-green-800"></i>
-                <span className="text-gray-700">
-                  {product.socialMedia.whatsapp}
-                </span>
+                <a
+                  href={product.socialMedia.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:underline"
+                >
+                  Chat via WhatsApp
+                </a>
               </li>
             </ul>
           </div>

@@ -9,7 +9,7 @@ import React from "react";
 
 function App() {
   return (
-    <div className="">
+    <div id="landing-page">
       <Navbar isWhite />
       <Home />
       <Intro />
