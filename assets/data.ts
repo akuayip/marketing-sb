@@ -26,6 +26,21 @@ import etawa2 from "@/assets/product/etawa2.jpg";
 import etawa3 from "@/assets/product/etawa3.jpg";
 import etawa4 from "@/assets/product/etawa4.jpg";
 
+import bakmie1 from "@/assets/product/bakmie1.jpg";
+import bakmie2 from "@/assets/product/bakmie2.jpg";
+import bakmie3 from "@/assets/product/bakmie3.jpg";
+import bakmie4 from "@/assets/product/bakmie4.jpg";
+
+import briket1 from "@/assets/product/briket1.jpg";
+import briket2 from "@/assets/product/briket2.jpg";
+import briket3 from "@/assets/product/briket3.jpg";
+import briket4 from "@/assets/product/briket4.jpg";
+
+import baju1 from "@/assets/product/baju1.jpeg";
+import baju2 from "@/assets/product/baju2.jpeg";
+import baju3 from "@/assets/product/baju3.jpeg";
+import baju4 from "@/assets/product/baju4.jpeg";
+
 export interface Product {
   title: string;
   description: string;
@@ -75,13 +90,13 @@ export const products: Product[] = [
       "BakMie Bu Kasirah, mie dari tepung singkong dengan kuah kacang gurih dan sayuran segar. Lezat, sehat, dan beda dari yang lain",
     longDescription:
       "BakMie Bu Kasirah menghadirkan cita rasa unik dengan mie berbahan dasar tepung singkong yang lembut dan kenyal, disiram kuah kacang gurih yang kaya rempah, serta dilengkapi dengan sayuran segar yang menambah kelezatan dan nutrisi. Sajian ini menawarkan perpaduan rasa autentik dan pilihan sehat, cocok untuk dinikmati bersama keluarga atau teman. Rasakan keistimewaannya di setiap suapan",
-    imageUrl: dodolgarut.src,
+    imageUrl: bakmie1.src,
     slug: "BakMie-Bu-Kasirah",
     socialMedia: {
       whatsapp: "https://wa.me/6282377319151",
       facebook: "",
     },
-    images: [dodolgarut.src, dodolgarut.src, dodolgarut.src],
+    images: [bakmie1.src, bakmie2.src, bakmie3.src, bakmie4.src],
   },
   {
     title: "Kambing Etawa Pak Sarino",
@@ -124,5 +139,31 @@ export const products: Product[] = [
       facebook: "",
     },
     images: [permen1.src, permen2.src, permen3.src, permen4.src],
+  },
+  {
+    title: "Briket dari Biomassa",
+    description: "Cooming Soon",
+    longDescription: "Cooming Soon",
+    imageUrl: permen1.src,
+    slug: "beriket",
+    socialMedia: {
+      whatsapp: "",
+      facebook: "",
+    },
+    images: [permen1.src, permen2.src, permen3.src, permen4.src],
+  },
+  {
+    title: "Rumah Jahit Nab'han",
+    description:
+      "Rumah Jahit Nab'han menjual baju hasil jahitan sendiri dengan desain yang unik dan nyaman dipakai.",
+    longDescription:
+      "Rumah Jahit Nab'han berfokus pada pembuatan pakaian dengan desain eksklusif yang dibuat secara khusus oleh tenaga ahli jahit. Setiap pakaian memiliki cerita, dan melalui karya ini, pelanggan dapat mengekspresikan kepribadian dan gaya mereka. Dengan menggunakan bahan pilihan terbaik dan teknik jahitan yang presisi, setiap produk tidak hanya terlihat indah tetapi juga nyaman untuk dikenakan. Mulai dari pakaian formal hingga casual, Rumah Jahit Nab'han hadir untuk memenuhi berbagai kebutuhan dengan hasil yang memuaskan.",
+    imageUrl: baju1.src,
+    slug: "baju",
+    socialMedia: {
+      whatsapp: "https://wa.me/6285664357200",
+      facebook: "",
+    },
+    images: [baju1.src, baju2.src, baju3.src, baju4.src],
   },
 ];

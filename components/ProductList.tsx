@@ -4,8 +4,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { products } from "@/assets/data";
@@ -60,12 +58,6 @@ const ProductList: React.FC = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-
-        {/* Tombol Previous */}
-        <CarouselPrevious className="hidden md:flex items-center justify-center bg-white text-green-800 hover:bg-green-100 -left-12 rounded-full w-10 h-10 shadow-md" />
-
-        {/* Tombol Next */}
-        <CarouselNext className="hidden md:flex items-center justify-center bg-white text-green-800 hover:bg-green-100 -right-12 rounded-full w-10 h-10 shadow-md" />
       </Carousel>
     </div>
   );
