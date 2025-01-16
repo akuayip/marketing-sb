@@ -31,10 +31,9 @@ import bakmie2 from "@/assets/product/bakmie2.jpg";
 import bakmie3 from "@/assets/product/bakmie3.jpg";
 import bakmie4 from "@/assets/product/bakmie4.jpg";
 
-import briket1 from "@/assets/product/briket1.jpg";
-import briket2 from "@/assets/product/briket2.jpg";
-import briket3 from "@/assets/product/briket3.jpg";
-import briket4 from "@/assets/product/briket4.jpg";
+import briket1 from "@/assets/product/briket1.jpeg";
+import briket2 from "@/assets/product/briket2.jpeg";
+import briket3 from "@/assets/product/briket3.jpeg";
 
 import baju1 from "@/assets/product/baju1.jpeg";
 import baju2 from "@/assets/product/baju2.jpeg";
@@ -144,13 +143,13 @@ export const products: Product[] = [
     title: "Briket dari Biomassa",
     description: "Cooming Soon",
     longDescription: "Cooming Soon",
-    imageUrl: permen1.src,
+    imageUrl: briket1.src,
     slug: "beriket",
     socialMedia: {
       whatsapp: "",
       facebook: "",
     },
-    images: [permen1.src, permen2.src, permen3.src, permen4.src],
+    images: [briket1.src, briket2.src, briket3.src],
   },
   {
     title: "Rumah Jahit Nab'han",

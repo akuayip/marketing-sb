@@ -49,7 +49,7 @@ const ProductList: React.FC = () => {
                     </p>
                     <Link href={`/product/${product.slug}`}>
                       <button className="px-4 py-2 mt-auto border border-green-800 text-green-800 rounded-md hover:bg-green-800 hover:text-white transition-colors">
-                        Lihat Detail
+                        Lihat Detail  
                       </button>
                     </Link>
                   </div>

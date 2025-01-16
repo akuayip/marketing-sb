@@ -54,7 +54,7 @@ const Footer = () => {
               <i className="fab fa-facebook-f"></i>
             </a>
             <a href="#" className="text-green-800 hover:text-green-600">
-              Call us: +1 800 856-36-00
+              Call us: +62878-2962-6993
               <i className="fab fa-twitter"></i>
             </a>
           </div>
